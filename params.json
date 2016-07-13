@@ -1,6 +1,6 @@
 {
   "name": "Intergraph China ",
   "tagline": "TR/CR",
-  "body": "# licheeking.github.io\r\nIntergraph TR/CR\r\n",
+  "body": "# 内容提供器\r\n\r\n@(Android Study)\r\n\r\n> 内容提供器(Content Provider)主要用于在不同的应用程序之间实现数据共享的功能，目前，使用内容提供器是Android实现跨程序共享数据的标准方式。\r\n\r\n##一. 用法\r\n---\r\n>* 使用现有的内容提供器来读取和操作相应程序中的数据\r\n>* 创建自己的内容提供器给我们的程序的数据提供外部访问接口\r\n\r\n###ContentResolver的基本用法\r\n借助ContentResolver类，通过Context中的getContentResolver()方法获取到该类的实例。\r\n* insert()\r\n* update()\r\n* delete()\r\n* query()\r\n\r\nContentResolver中的增删改查方法都是不接收表名参数的，而是使用一个Uri参数代替，这个参数被称为内容URI。因此，内容URI最标准的格式写法如下：\r\n```\r\ncontent://com.example.app.provider/table1\r\ncontent://com.example.app.provider/table2\r\n```\r\n得到内容URI字符串后，还需要将它解析成Uri对象才可以作为参数传入。代码如下所示：\r\n```\r\nUri uri = Uri.parse(\"content://com.example.app.provider/table1\");\r\n```\r\n\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }

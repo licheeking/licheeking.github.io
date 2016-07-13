@@ -46,9 +46,48 @@
 
       <section id="main_content">
         <h1>
-<a id="licheekinggithubio" class="anchor" href="#licheekinggithubio" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>licheeking.github.io</h1>
+<a id="内容提供器" class="anchor" href="#%E5%86%85%E5%AE%B9%E6%8F%90%E4%BE%9B%E5%99%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>内容提供器</h1>
 
-<p>Intergraph TR/CR</p>
+<p>@(Android Study)</p>
+
+<blockquote>
+<p>内容提供器(Content Provider)主要用于在不同的应用程序之间实现数据共享的功能，目前，使用内容提供器是Android实现跨程序共享数据的标准方式。</p>
+</blockquote>
+
+<h2>
+<a id="一-用法" class="anchor" href="#%E4%B8%80-%E7%94%A8%E6%B3%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>一. 用法</h2>
+
+<hr>
+
+<blockquote>
+<ul>
+<li>使用现有的内容提供器来读取和操作相应程序中的数据</li>
+<li>创建自己的内容提供器给我们的程序的数据提供外部访问接口</li>
+</ul>
+</blockquote>
+
+<h3>
+<a id="contentresolver的基本用法" class="anchor" href="#contentresolver%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ContentResolver的基本用法</h3>
+
+<p>借助ContentResolver类，通过Context中的getContentResolver()方法获取到该类的实例。</p>
+
+<ul>
+<li>insert()</li>
+<li>update()</li>
+<li>delete()</li>
+<li>query()</li>
+</ul>
+
+<p>ContentResolver中的增删改查方法都是不接收表名参数的，而是使用一个Uri参数代替，这个参数被称为内容URI。因此，内容URI最标准的格式写法如下：</p>
+
+<pre><code>content://com.example.app.provider/table1
+content://com.example.app.provider/table2
+</code></pre>
+
+<p>得到内容URI字符串后，还需要将它解析成Uri对象才可以作为参数传入。代码如下所示：</p>
+
+<pre><code>Uri uri = Uri.parse("content://com.example.app.provider/table1");
+</code></pre>
       </section>
 
       <footer>
