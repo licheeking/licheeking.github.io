@@ -1,83 +1,109 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!--<link rel="icon" href="../../favicon.ico">-->
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
 
-    <title>Cover Template for Bootstrap</title>
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
 
-    <!-- Bootstrap core CSS -->
-    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="stylesheets/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="stylesheets/cover.css" rel="stylesheet">
-
-    
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Intergraph China  by licheeking</title>
   </head>
 
   <body>
+    <a id="forkme_banner" href="https://github.com/licheeking">View on GitHub</a>
+    <div class="shell">
 
-    <div class="site-wrapper">
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Intergraph China </h1>
+            <h2>TR/CR</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
 
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">Cover</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-
-          <div class="inner cover">
-            <h1 class="cover-heading">Cover your page.</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
-            </p>
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-            </div>
-          </div>
-
-        </div>
-
+      <div id="no-downloads">
+        <span class="inner">
+        </span>
       </div>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a id="内容提供器" class="anchor" href="#%E5%86%85%E5%AE%B9%E6%8F%90%E4%BE%9B%E5%99%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>内容提供器</h1>
+
+<p>@(Android Study)</p>
+
+<blockquote>
+<p>内容提供器(Content Provider)主要用于在不同的应用程序之间实现数据共享的功能，目前，使用内容提供器是Android实现跨程序共享数据的标准方式。</p>
+</blockquote>
+
+<h2>
+<a id="一-用法" class="anchor" href="#%E4%B8%80-%E7%94%A8%E6%B3%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>一. 用法</h2>
+
+<hr>
+
+<blockquote>
+<ul>
+<li>使用现有的内容提供器来读取和操作相应程序中的数据</li>
+<li>创建自己的内容提供器给我们的程序的数据提供外部访问接口</li>
+</ul>
+</blockquote>
+
+<h3>
+<a id="contentresolver的基本用法" class="anchor" href="#contentresolver%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ContentResolver的基本用法</h3>
+
+<p>借助ContentResolver类，通过Context中的getContentResolver()方法获取到该类的实例。</p>
+
+<ul>
+<li>insert()</li>
+<li>update()</li>
+<li>delete()</li>
+<li>query()</li>
+</ul>
+
+<p>ContentResolver中的增删改查方法都是不接收表名参数的，而是使用一个Uri参数代替，这个参数被称为内容URI。因此，内容URI最标准的格式写法如下：</p>
+
+<pre><code>content://com.example.app.provider/table1
+content://com.example.app.provider/table2
+</code></pre>
+
+<p>得到内容URI字符串后，还需要将它解析成Uri对象才可以作为参数传入。代码如下所示：</p>
+
+<pre><code>Uri uri = Uri.parse("content://com.example.app.provider/table1");
+</code></pre>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>Projects by <a href="https://github.com/licheeking">licheeking</a> can be found on <a href="https://github.com/licheeking">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
 
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="javascripts/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="javascripts/ie10-viewport-bug-workaround.js"></script>
+    
   </body>
 </html>
